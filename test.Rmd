@@ -7,7 +7,7 @@ library(tidyverse)
 
 ```{r}
 
-data = read.csv("~/Documents/Code/R/Project2/Data1001 Survey Responses.csv")
+data = read.csv("Data1001 Survey Responses.csv")
 
 table(data$Devices)
 
@@ -27,17 +27,32 @@ ggplot(data) +
 
 ggplot(data) +
   aes(x = Devices, y = ScreenTime) +
-  labs(x = "Number of Devices used", y = "Average Screen time (hours)", title = "Screen tiem & Number of Devices used") +
+  labs(x = "Number of Devices used", y = "Average Screen time (hours)", title = "Screen time & Number of Devices used") +
   geom_boxplot()
 
 ggplot(data) +
   aes(x = BedTime, y = ScreenTime) +
   labs(x = "Bed Time", y = "Average Screen Time (hours)", title = "Bed Time and Screen Time") +
   geom_col()
-  
 
 ggplot(data) +
-  aes(x = Employment, fill = Gender) +
+  aes(x = Devices, fill = Notes) +
+  geom_bar()
+
+
+ggplot(data) +
+  aes(x = Gender, y = ScreenTime) +
+  labs(x = "Gender", y = "Screen Time (hours)", title = "Gender & Screen Time") +
   geom_boxplot()
+
+
+ggplot(data) + 
+  aes(x = Gender, fill = Devices) +
+  geom_bar()
+
+ggplot(data) +
+  aes(x = Devices, fill = Gender) +
+  geom_bar()
+
 ```
 
