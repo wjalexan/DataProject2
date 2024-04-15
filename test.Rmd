@@ -1,0 +1,37 @@
+# Test page
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+
+data = read.csv("~/Documents/Code/R/Project2/Data1001 Survey Responses.csv")
+
+table(data$Devices)
+
+# re-order devices
+data$Devices <- factor(data$Devices , levels=c("1","2","3","4",">5"))
+
+str(data)
+ggplot(data) +
+  aes(x = ScreenTime, y = SleepTime) +
+  labs(x = "Screen Time (hours)", y = "Sleep Time (hours)", title = "Screen Time & Sleep Time") +
+  geom_point()
+
+ggplot(data) +
+  aes(x = Employment, y = ScreenTime) +
+  labs(x = "Employment Type", y = "Average Screen Time (hours)", title = "Screen time & Employment Type") +
+  geom_boxplot()
+
+ggplot(data) +
+  aes(x = Devices, y = ScreenTime) +
+  labs(x = "Number of Devices used", y = "Average Screen time (hours)") +
+  geom_boxplot()
+
+ggplot(data) +
+  aes(x = Employment, fill = Gender) +
+  geom_bar()
+```
+

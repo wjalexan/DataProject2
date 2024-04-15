@@ -1,0 +1,117 @@
+---
+title: "DATA1001 Project 2 Group 9: Screen time & Hours of sleep"
+author: "540722172 | ..."
+subtitle: "Project 2"
+date: "University of Sydney | DATA1001 | APRIL 2024"
+# You can change the title, subtitle, author etc.
+# if you do not want a subtitle, author, or date just delete or comment # the the line!
+output:
+  html_document:
+    fig_caption: yes
+    number_sections: yes
+    self_contained: yes
+    theme: darkly
+    # Other themes can be found at: https://bootswatch.com/
+    css: 
+      - https://use.fontawesome.com/releases/v5.0.6/css/all.css
+    #This will allow you to insert icons in your document, thanks to [Font Awesome](http://fontawesome.io).
+    #You will find an examples below.
+    # If you are knitting your document but not connected to the internet, place a "#" in front of the css line above with the font-awesome.min.css line to comment it out. This will let you knit the document in draft form until you connect again and knit the final. Note that when you do this some elements will be missing from the knitted slides. 
+    toc: true
+    #This adds a Table of Contents (toc).
+    toc_depth: 3
+    #This controls the number of subheadings included in the toc.
+    toc_float: true
+    #This allows toc to update relative to your location as you scroll down the html page.
+    code_folding: hide
+    #code_folding can be changed to "hide"" if you want the all your code to be collapsed when you open the document
+    
+    # More information: http://rmarkdown.rstudio.com/html_document_format.html
+---
+[Survey Link](https://docs.google.com/forms/d/1NzBi49qva2QVVVqjXk_36b3u9F5dy5D6GPL8vr32CvI/edit)
+<br>
+
+# Executive Summary
+
+-   The aim of this report is to determine if there is a correlation between average hours of screen time and average hours of sleep
+-   The main discoveries are ...
+
+<br>
+
+<br>
+
+# Full Report
+
+## Initial Data Analysis (IDA)
+
+Due to effective moderation of Google Form inputs, there are no invalid data entries. Variable titles were changed to more descriptive names, as rows were previously labelled by survey question e.g: "What is your age?" was changed to simply "Age". The number of devices column is ordered incorrectly, with ">5" as the first entry. This was changed to ensure these values are in the correct order.
+
+```{r}
+
+# LOAD DATA v1 - uncomment the link below to: load data direct from html
+#cars = read.csv("dataset URL")
+
+# LOAD DATA v2 - uncomment the link below to: load data from local file
+data = read.csv("Data1001 Survey Responses.csv")
+
+# Quick look at top 5 rows of data
+head(data)
+
+# R generated data summary
+# summarize(data)
+
+## Size of data
+# For the data dataset, there are 32 rows (the types of cars) and 11 variables (properties of the cars).
+print("Number of responses, Number of categories")
+dim(data)
+
+## R's classification of data
+print("Data type of results")
+class(data)
+
+## R's classification of variables
+str(data)
+#sapply(data, class)
+
+# Table for participant age
+print("Table of participant ages")
+table(data$Age)
+
+# Table for participant employment
+print("Table of participant employment status")
+table(data$Employment)
+
+# re-order devices
+data$Devices <- factor(data$Devices , levels=c("1","2","3","4",">5"))
+```
+
+Summary:
+
+-   The data came from an online Google forms, with the survey posted anonymously on Ed.
+-   The data is/is not valid because ...
+-   Possible issues include lack of diversity of participants, as people within the 16-20 age bracket occupy \~80% of the data recorded.
+-   Each row represents a different variable collected
+-   Each column represents a participant
+-   There were 49 responses at the time of data analysis
+
+<br>
+
+## Research Question 1:
+
+### Does average screen time have an impact on average hours of sleep?
+
+This investigation aims to research a possible correlation between average screen time and
+
+Summary:
+
+## Research Question 2
+
+Insert text and analysis.
+
+Summary:
+
+# References
+
+Style: APA
+
+<br>
