@@ -28,7 +28,7 @@ output:
     
     # More information: http://rmarkdown.rstudio.com/html_document_format.html
 ---
-[Survey Link](https://docs.google.com/forms/d/1NzBi49qva2QVVVqjXk_36b3u9F5dy5D6GPL8vr32CvI/edit)
+
 <br>
 
 # Executive Summary
@@ -43,7 +43,13 @@ output:
 # Full Report
 
 ## Initial Data Analysis (IDA)
-
+### Source
+The survey was collected from University of Sydney students using google forms between 26/3/2024 and 1/4/2024. [Survey Link](https://docs.google.com/forms/d/1NzBi49qva2QVVVqjXk_36b3u9F5dy5D6GPL8vr32CvI/edit)
+### Structure
+The survey received 49 responses, represented by rows while variables are represented by columns. The `read.csv()` function was used to import the data into **R**. The variable names were manually changed to be more descriptive for ease of data analysis.
+### Limitations
+### Assumptions
+### Data Clearing
 Due to effective moderation of Google Form inputs, there are no invalid data entries. Variable titles were changed to more descriptive names, as rows were previously labelled by survey question e.g: "What is your age?" was changed to simply "Age". The number of devices column is ordered incorrectly, with ">5" as the first entry. This was changed to ensure these values are in the correct order.
 
 ```{r}
@@ -53,6 +59,7 @@ Due to effective moderation of Google Form inputs, there are no invalid data ent
 
 # LOAD DATA v2 - uncomment the link below to: load data from local file
 data = read.csv("Data1001 Survey Responses.csv")
+colnames(data) <- c("Timestamp","Gender","Age","Employment","ScreenTime","SleepTime","Devices","StudyTime","BedTime","Notes")
 
 # Quick look at top 5 rows of data
 head(data)

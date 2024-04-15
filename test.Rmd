@@ -9,16 +9,30 @@ library(tidyverse)
 
 data = read.csv("Data1001 Survey Responses.csv")
 
+
+colnames(data) <- c("Timestamp","Gender","Age","Employment","ScreenTime","SleepTime","Devices","StudyTime","BedTime","Notes")
+
+
 table(data$Devices)
 
 # re-order devices
 data$Devices <- factor(data$Devices , levels=c("1","2","3","4",">5"))
 
 str(data)
+
+fit = lm(data$SleepTime~ data$ScreenTime)
+cor(data$ScreenTime, data$SleepTime)
+summary(fit)
+
 ggplot(data) +
   aes(x = ScreenTime, y = SleepTime) +
   labs(x = "Screen Time (hours)", y = "Sleep Time (hours)", title = "Screen Time & Sleep Time") +
-  geom_point()
+  geom_point() +
+  geom_smooth(method = "lm")
+cor(data$ScreenTime, data$SleepTime)
+
+fit = lm(Sl)
+
 
 ggplot(data) +
   aes(x = Employment, y = ScreenTime) +
@@ -51,8 +65,9 @@ ggplot(data) +
   geom_bar()
 
 ggplot(data) +
-  aes(x = Devices, fill = Gender) +
+  aes(x = Notes, fill = Gender) +
   geom_bar()
+
 
 ```
 

@@ -1,4 +1,4 @@
-Timestamp,Gender,Age,Employment,ScreenTime,SleepTime,Devices,StudyTime,BedTime,Notes
+Timestamp,What is your Gender?,How old are you? ,What is your employment type?  ,What is your phone screen time per day? (in hours) ,How long do you spend asleep on average each night?  (in hours),"How many devices do you use per day? (e.g. Phone, laptop, iPad, etc)",How long do you spend studying on average per day? (in hours),What time do you generally go to bed?,"Do you take notes with Pen and Paper or digitally (e.g. laptop, iPad)?"
 3/26/2024 9:37:00,Male,16 - 20,Casual,6.5,5,2,7,After 1am,Digitally
 3/26/2024 9:37:06,Male,16 - 20,Casual,4,7,3,5,12am - 1am,Digitally
 3/26/2024 9:37:17,Male,21 - 25,Part-Time,4.29,6,2,3,11pm - 12am,Digitally
